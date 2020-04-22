@@ -33,7 +33,6 @@ else
 fi
 
 
-cd opencv
 mkdir build
 cd build
 
@@ -53,8 +52,8 @@ time cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D WITH_QT=OFF \
       -D WITH_OPENGL=OFF \
       -D CPACK_BINARY_DEB=ON \
-	  -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
-      ../ \
+	  -D OPENCV_EXTRA_MODULES_PATH=../opencv_contrib/modules \
+      ../opencv \
 	2>&1 | tee ${LOGFILE}
 
 if [ $? -eq 0 ] ; then
