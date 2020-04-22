@@ -20,20 +20,20 @@ cd ${OPENCV_SOURCE_DIR}
 
 if [ -d opencv ]
 then
-	echo "********** REUSING ${OPENCV_SOURCE_DIR}/opencv - remove this before running to re-clone **********"
+	echo "********** SKIPPING clone of ${OPENCV_SOURCE_DIR}/opencv (already exists)**********"
 else
 	git clone -b tomctomc https://github.com/tomctomc/opencv.git
 fi
 
 if [ -d opencv_contrib ]
 then
-	echo "********** REUSING ${OPENCV_SOURCE_DIR}/opencv_contrib - remove this before running to re-clone **********"
+	echo "********** SKIPPING clone of ${OPENCV_SOURCE_DIR}/opencv_contrib (already exists)**********"
 else
 	git clone -b tomctomc https://github.com/tomctomc/opencv_contrib.git
 fi
 
 
-mkdir build
+mkdir -p build
 cd build
 
 ##### run cmake
